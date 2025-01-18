@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'category_page.dart';
+import 'mealPlanPage.dart';  // Import the new MealPlanPage
 
 class HomePage extends StatelessWidget {
   @override
@@ -112,7 +113,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.all(16.0), // Added padding for better spacing
+              padding: const EdgeInsets.all(16.0),
               child: Container(
                 height: 200,
                 width: double.infinity,
@@ -126,6 +127,79 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 40),
+
+            // Meal Plan Section
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Meal Plans Just for You!',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Color(0xFF323232),
+                  fontWeight: FontWeight.bold,
+                  height: 1.6,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Looking to plan your meals ahead of time? Explore our meal plans tailored to your dietary preferences and help you maintain a balanced lifestyle.',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[700],
+                  height: 1.6,
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                height: 250, // Adjust the height as per your requirement
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/mealPlanImage.jpg'), // Your image here
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF0C3732),
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    side: BorderSide(color: Colors.white, width: 1), // White border
+                  ),
+                  elevation: 5,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MealPlanPage()), // Navigate to MealPlanPage
+                  );
+                },
+                child: Text(
+                  'View Meal Plans',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+
+            // Meal Plan Image Section
+
           ],
         ),
       ),
