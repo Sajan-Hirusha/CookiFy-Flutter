@@ -16,69 +16,111 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              height: 250,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/cookifyBackground.jpg'),
-                  fit: BoxFit.cover,
+            Stack(
+              children: [
+                Container(
+                  height: 250,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/cookifyBackground.jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-                borderRadius: BorderRadius.only(
+                Container(
+                  height: 250,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.67),
+                  ),
                 ),
-              ),
+                Positioned(
+                  top: 70,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: Text(
+                      'Welcome to CookiFy',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 60,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF0C3732),
+                        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 13),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                          side: BorderSide(color: Colors.white, width: 1), // White border
+                        ),
+                        elevation: 5,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CategoryPage()),
+                        );
+                      },
+                      child: Text(
+                        'View Categories',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 20),
-
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                'Welcome to MealDB App',
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-
-            // Description Text Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Explore different categories and recipes to satisfy your taste buds.',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Colors.grey[600],
+                  color: Color(0xFF323232),
+                  fontWeight: FontWeight.bold,
+                  height: 1.6,
                 ),
               ),
             ),
             SizedBox(height: 40),
-
-            // Button Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepOrange, // Button color
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
+              child: Text(
+                'CookiFy is your go-to app for exploring a wide variety of delicious meals and recipes. Whether you are a beginner or an experienced cook, CookiFy has something for everyone. Browse through categories like Appetizers, Main Courses, and Desserts, and start cooking your next favorite dish!',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[700],
+                  height: 1.6,
                 ),
-                onPressed: () {
-                  // Navigate to the Category Page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CategoryPage()),
-                  );
-                },
-                child: Text(
-                  'View Categories',
-                  style: TextStyle(fontSize: 18),
+              ),
+            ),
+            SizedBox(height: 30),
+            Container(
+              height: 200,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/cookingAppImage.jpg'),
+                  fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.circular(12),
+
               ),
             ),
             SizedBox(height: 40),
