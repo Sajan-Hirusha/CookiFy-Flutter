@@ -111,16 +111,18 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            Container(
-              height: 200,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/cookingAppImage.jpg'),
-                  fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsets.all(16.0), // Added padding for better spacing
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/cookingAppImage.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                borderRadius: BorderRadius.circular(12),
-
               ),
             ),
             SizedBox(height: 40),
