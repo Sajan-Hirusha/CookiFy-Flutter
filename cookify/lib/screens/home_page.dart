@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'category_page.dart';
 import 'mealPlanPage.dart';
+import 'help_support_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -84,15 +85,13 @@ class HomePage extends StatelessWidget {
             ),
             Divider(),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-              },
-            ),
-            ListTile(
               leading: Icon(Icons.help_outline),
               title: Text('Help & Support'),
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HelpSupportPage()),
+                );
               },
             ),
           ],
