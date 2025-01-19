@@ -4,6 +4,8 @@ import '../services/api_service.dart';
 import 'recipe_page.dart';
 
 class CategoryPage extends StatefulWidget {
+  const CategoryPage({super.key});
+
   @override
   _CategoryPageState createState() => _CategoryPageState();
 }

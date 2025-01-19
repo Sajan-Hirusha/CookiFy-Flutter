@@ -7,7 +7,7 @@ import 'recipe_detail_page.dart';
 class RecipePage extends StatelessWidget {
   final Category category;
 
-  RecipePage({required this.category});
+  const RecipePage({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {

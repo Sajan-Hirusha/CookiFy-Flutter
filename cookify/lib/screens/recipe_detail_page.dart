@@ -6,7 +6,7 @@ import '../services/api_service.dart';
 class RecipeDetailPage extends StatelessWidget {
   final Recipe recipe;
 
-  RecipeDetailPage({required this.recipe});
+  const RecipeDetailPage({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {

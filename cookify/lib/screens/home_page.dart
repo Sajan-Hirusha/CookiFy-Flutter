@@ -1,17 +1,102 @@
 import 'package:flutter/material.dart';
 import 'category_page.dart';
-import 'mealPlanPage.dart';  // Import the new MealPlanPage
+import 'mealPlanPage.dart'; // Import the new MealPlanPage
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'CookiFy',
-          style: TextStyle(color: Colors.white),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          // Aligns content to the right
+          children: [
+            Padding(
+              padding: EdgeInsets.only(right: 20.0), // Add right margin
+              child: Text(
+                'CookiFy',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
         ),
         backgroundColor: Color(0xFF0C3732),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFF0C3732),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage(
+                        'assets/images/profile.jpg'),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Welcome to CookiFy!',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Text(
+                    'Your ultimate recipe companion',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.category),
+              title: Text('Explore Category'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CategoryPage()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.restaurant_menu),
+              title: Text('View Meal Plans'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MealPlanPage()),
+                );
+              },
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                // Handle settings navigation
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.help_outline),
+              title: Text('Help & Support'),
+              onTap: () {
+                // Handle help and support navigation
+              },
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -41,46 +126,33 @@ class HomePage extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: Center(
-                    child: Text(
-                      'Welcome to CookiFy',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 60,
-                  left: 0,
-                  right: 0,
-                  child: Center(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF0C3732),
-                        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 13),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          side: BorderSide(color: Colors.white, width: 1), // White border
+                    child: Column(
+                      children: [
+                        Text(
+                          'Welcome to CookiFy',
+                          style: TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            letterSpacing: 1.2,
+                          ),
                         ),
-                        elevation: 5,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => CategoryPage()),
-                        );
-                      },
-                      child: Text(
-                        'View Categories',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                        SizedBox(height: 8),
+                        Text(
+                          'Explore, Cook, and Savor Every Bite.',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white70,
+                          ),
                         ),
-                      ),
+                        Text(
+                          'Your culinary adventure starts here!',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -126,6 +198,34 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 20),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF0C3732),
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    side: BorderSide(color: Colors.white, width: 1),
+                  ),
+                  elevation: 5,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CategoryPage()),
+                  );
+                },
+                child: Text(
+                  'Explore Categories',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: 40),
 
             // Meal Plan Section
@@ -160,7 +260,8 @@ class HomePage extends StatelessWidget {
                 height: 250, // Adjust the height as per your requirement
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/mealPlanImage.jpg'), // Your image here
+                    image: AssetImage('assets/images/mealPlanImage.jpg'),
+                    // Your image here
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(12),
@@ -176,14 +277,17 @@ class HomePage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),
-                    side: BorderSide(color: Colors.white, width: 1), // White border
+                    side: BorderSide(
+                        color: Colors.white, width: 1), // White border
                   ),
                   elevation: 5,
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MealPlanPage()), // Navigate to MealPlanPage
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            MealPlanPage()), // Navigate to MealPlanPage
                   );
                 },
                 child: Text(
@@ -197,9 +301,6 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-
-            // Meal Plan Image Section
-
           ],
         ),
       ),
