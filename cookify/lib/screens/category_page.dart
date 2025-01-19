@@ -26,11 +26,11 @@ class _CategoryPageState extends State<CategoryPage> {
       appBar: AppBar(
         title: Text(
           'Categories',
-          style: TextStyle(color: Colors.white), // Set text color to white
+          style: TextStyle(color: Colors.white),
         ),
         backgroundColor: const Color(0xFF0C3732),
         iconTheme: IconThemeData(
-          color: Colors.white, // Set drawer icon color to white
+          color: Colors.white,
         ),
       ),
       body: FutureBuilder<List<Category>>(

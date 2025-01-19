@@ -16,7 +16,7 @@ class Meal {
       strMeal: json['strMeal'],
       strMealThumb: json['strMealThumb'],
       strInstructions: json['strInstructions'],
-      strYoutube: json['strYoutube'], // Map this field
+      strYoutube: json['strYoutube'],
     );
   }
 }

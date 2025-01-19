@@ -50,22 +50,24 @@ class ApiService {
   }
 
   // Fetch meal details by name
-  Future<Meal?> fetchMealDetailsByName(String name) async {
+  Future<List<Recipe>> fetchMealDetailsByName(String name) async {
     try {
       final response = await http.get(Uri.parse('${baseUrl}search.php?s=$name'));
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
+
         if (data['meals'] != null) {
-          return Meal.fromJson(data['meals'][0]);
+          return (data['meals'] as List)
+              .map((meal) => Recipe.fromJson(meal))
+              .toList();
         }
-        return null; // Return null if no meal found
+        return [];
       } else {
         throw Exception('Failed to fetch meal details by name');
       }
     } catch (e) {
-      rethrow; // Propagate the exception for further handling
+      rethrow;
     }
   }
-
 }

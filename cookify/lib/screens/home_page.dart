@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'category_page.dart';
-import 'mealPlanPage.dart'; // Import the new MealPlanPage
+import 'mealPlanPage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,10 +11,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          // Aligns the title to the right
           children: [
             Padding(
-              padding: EdgeInsets.only(right: 20.0), // Add right margin
+              padding: EdgeInsets.only(right: 20.0),
               child: Text(
                 'CookiFy',
                 style: TextStyle(color: Colors.white),
@@ -24,7 +23,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Color(0xFF0C3732),
         iconTheme: IconThemeData(
-          color: Colors.white, // Set drawer icon color to white
+          color: Colors.white,
         ),
       ),
       drawer: Drawer(
@@ -41,7 +40,7 @@ class HomePage extends StatelessWidget {
                   CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage(
-                        'assets/images/CookiFy.png'), // Optional profile image
+                        'assets/images/CookiFy.png'),
                   ),
                   SizedBox(height: 10),
                   Text(
@@ -88,14 +87,12 @@ class HomePage extends StatelessWidget {
               leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
-                // Handle settings navigation
               },
             ),
             ListTile(
               leading: Icon(Icons.help_outline),
               title: Text('Help & Support'),
               onTap: () {
-                // Handle help and support navigation
               },
             ),
           ],
@@ -260,11 +257,10 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
-                height: 250, // Adjust the height as per your requirement
+                height: 250,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/mealPlanImage.jpg'),
-                    // Your image here
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(12),
@@ -290,7 +286,7 @@ class HomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            MealPlanPage()), // Navigate to MealPlanPage
+                            MealPlanPage()),
                   );
                 },
                 child: Text(
