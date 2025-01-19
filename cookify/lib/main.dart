@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'screens/home_page.dart';
+import 'screens/splash_screen.dart'; 
 
 void main() {
-  runApp(MealDBApp());
+  runApp(const CookiFyApp());
 }
 
-class MealDBApp extends StatelessWidget {
-  const MealDBApp({super.key});
+class CookiFyApp extends StatelessWidget {
+  const CookiFyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MealDB App',
+      title: 'CookiFy',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const SplashScreen(),
     );
   }
 }
