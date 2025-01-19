@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/home_page.dart';
-import 'screens/splash_screen.dart'; 
+import 'screens/splash_screen.dart';
 
 void main() {
   runApp(const CookiFyApp());
