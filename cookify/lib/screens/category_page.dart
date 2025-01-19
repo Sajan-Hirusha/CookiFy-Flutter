@@ -28,7 +28,10 @@ class _CategoryPageState extends State<CategoryPage> {
           'Categories',
           style: TextStyle(color: Colors.white), // Set text color to white
         ),
-        backgroundColor: const Color(0xFF0C3732), // Keep the existing background color
+        backgroundColor: const Color(0xFF0C3732),
+        iconTheme: IconThemeData(
+          color: Colors.white, // Set drawer icon color to white
+        ),
       ),
       body: FutureBuilder<List<Category>>(
         future: categories,
