@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/category.dart';
 import '../services/api_service.dart';
+import '../widgets/category_card.dart';
 import 'recipe_page.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _CategoryPageState extends State<CategoryPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Categories'),
+        backgroundColor: const Color(0xFF0C3732),
       ),
       body: FutureBuilder<List<Category>>(
         future: categories,
@@ -39,12 +41,13 @@ class _CategoryPageState extends State<CategoryPage> {
             return GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.75,
+                childAspectRatio: 0.8,
               ),
               itemCount: categories.length,
               itemBuilder: (context, index) {
                 final category = categories[index];
-                return GestureDetector(
+                return CategoryCard(
+                  category: category,
                   onTap: () {
                     Navigator.push(
                       context,
@@ -53,15 +56,6 @@ class _CategoryPageState extends State<CategoryPage> {
                       ),
                     );
                   },
-                  child: Card(
-                    elevation: 5,
-                    child: Column(
-                      children: <Widget>[
-                        Image.network(category.strCategoryThumb),
-                        Text(category.strCategory),
-                      ],
-                    ),
-                  ),
                 );
               },
             );

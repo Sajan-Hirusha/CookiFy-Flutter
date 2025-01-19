@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          // Aligns content to the right
+          // Aligns the title to the right
           children: [
             Padding(
               padding: EdgeInsets.only(right: 20.0), // Add right margin
@@ -23,6 +23,9 @@ class HomePage extends StatelessWidget {
           ],
         ),
         backgroundColor: Color(0xFF0C3732),
+        iconTheme: IconThemeData(
+          color: Colors.white, // Set drawer icon color to white
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -38,7 +41,7 @@ class HomePage extends StatelessWidget {
                   CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage(
-                        'assets/images/profile.jpg'),
+                        'assets/images/CookiFy.png'), // Optional profile image
                   ),
                   SizedBox(height: 10),
                   Text(
