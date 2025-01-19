@@ -24,8 +24,11 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categories'),
-        backgroundColor: const Color(0xFF0C3732),
+        title: Text(
+          'Categories',
+          style: TextStyle(color: Colors.white), // Set text color to white
+        ),
+        backgroundColor: const Color(0xFF0C3732), // Keep the existing background color
       ),
       body: FutureBuilder<List<Category>>(
         future: categories,
