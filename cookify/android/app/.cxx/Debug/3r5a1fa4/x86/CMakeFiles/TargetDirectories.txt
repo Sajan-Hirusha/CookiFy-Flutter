@@ -1,0 +1,2 @@
+F:/languages/Git Repos/Recipe app/Food-Recipe-App--Kotlin/cookify/android/app/.cxx/Debug/3r5a1fa4/x86/CMakeFiles/edit_cache.dir
+F:/languages/Git Repos/Recipe app/Food-Recipe-App--Kotlin/cookify/android/app/.cxx/Debug/3r5a1fa4/x86/CMakeFiles/rebuild_cache.dir
