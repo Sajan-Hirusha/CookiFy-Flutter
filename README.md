@@ -55,8 +55,6 @@ Refined and enhanced based on real user testing for the best cooking experience.
 |--------------|--------------|---------------|
 | ![Home](assets/screenshots/home.png) | ![Recipe](assets/screenshots/recipe.png) | ![Planner](assets/screenshots/planner.png) |
 
-*(Add your own screenshots in the `/assets/screenshots` folder and update the paths.)*
-
 ---
 
 ## ⚙️ Installation  
